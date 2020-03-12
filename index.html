@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Ngoc Minh | LiveChat</title>
+    <link rel="stylesheet" type="text/css" href="./assets/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Chat realtime</h2>
+        <div style="max-height: 60%;" id="messages">
+            <!-- <h2>Chat realtime</h2>
+            <ul id="messages"></ul> -->
+            <!--
+            <div class="container">
+            <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
+            <p>Sweet! So, what do you wanna do today?</p>
+            <span class="time-right">11:02</span>
+            </div> -->
+        </div>
+        <form action="">
+            <input id="m" autocomplete="off" /><button class="btn btn-info">Send</button>
+        </form>
+    </div>
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+      var socket = io();
+      $('form').submit(function(){
+        if($('#m').val() != ''){
+            socket.emit('chat message', $('#m').val());
+        }
+        $('#m').val('');
+        return false;
+      });
+      socket.on('chat message', function(msg){
+        $('#messages').append($(`<div class="darker">
+            <img src="./assets/img/1.png" alt="Avatar" class="right" style="width:100%;">
+            <p>${msg}</p></div>`
+        ));
+      });
+    });
+</script>
+
+</html>

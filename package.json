@@ -1,0 +1,27 @@
+{
+  "name": "livechat",
+  "version": "1.0.0",
+  "description": "minh-livechat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngocminh2306/livechat.git"
+  },
+  "keywords": [
+    "livechat"
+  ],
+  "author": "ngoc-minh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngocminh2306/livechat/issues"
+  },
+  "homepage": "https://github.com/ngocminh2306/livechat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
