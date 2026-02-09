@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "tsc",
+    "dev": "ts-node src/game.ts",
+    "serve": "http-server -o"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,18 @@
   },
   "homepage": "https://github.com/ngocminh2306/livechat#readme",
   "dependencies": {
+    "babylonjs": "^6.0.0",
+    "babylonjs-inspector": "^6.0.0",
+    "babylonjs-loaders": "^6.0.0",
     "express": "^4.17.1",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/babylonjs": "^2.3.31",
+    "@types/node": "^18.19.130",
+    "@types/webxr": "^0.5.24",
+    "http-server": "^14.1.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.9.5"
   }
 }
